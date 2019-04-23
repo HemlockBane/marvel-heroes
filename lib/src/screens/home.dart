@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../widgets/marvel_character_card.dart';
+
 class HomeScreen extends StatefulWidget {
   HomeScreen({Key key, this.title}) : super(key: key);
   final String title;
@@ -9,7 +11,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  int _counter = 0;
+
 
   @override
   Widget build(BuildContext context) {
@@ -17,15 +19,9 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'Home',
-            ),
-          ],
-        ),
+      body: Container(
+        margin: EdgeInsets.only(left: 10, top: 20),
+        child: MarvelCharacterCard(),
       ),
     );
   }
