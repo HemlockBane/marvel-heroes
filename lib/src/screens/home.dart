@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../widgets/marvel_character_card.dart';
+import '../widgets/character_card.dart';
 
 class HomeScreen extends StatefulWidget {
   HomeScreen({Key key, this.title}) : super(key: key);
@@ -21,7 +21,7 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       body: Container(
         margin: EdgeInsets.only(left: 10, top: 20),
-        child: MarvelCharacterCard(),
+        child: CharacterCard(),
       ),
     );
   }

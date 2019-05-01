@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class MarvelCharacterCard extends StatefulWidget {
+class CharacterCard extends StatefulWidget {
   @override
-  _MarvelCharacterCardState createState() => _MarvelCharacterCardState();
+  _CharacterCardState createState() => _CharacterCardState();
 }
 
-class _MarvelCharacterCardState extends State<MarvelCharacterCard> {
+class _CharacterCardState extends State<CharacterCard> {
   @override
   Widget build(BuildContext context) {
     return Container(
