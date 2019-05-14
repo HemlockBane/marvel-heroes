@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../models/character.dart';
+import '../models/character_image.dart';
 
 class CharacterCard extends StatefulWidget {
   CharacterCard({this.characterDetails});
@@ -34,7 +35,7 @@ class _CharacterCardState extends State<CharacterCard> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
-            _buildImage(context),
+            _buildImage(context, _characterDetails.image),
             Expanded(
               child: Container(
                 margin: EdgeInsets.symmetric(horizontal: 16),
@@ -62,14 +63,17 @@ class _CharacterCardState extends State<CharacterCard> {
     );
   }
 
-  Widget _buildImage(BuildContext context) {
+  Widget _buildImage(BuildContext context, CharacterImage characterImage) {
+    String imagePath = characterImage.path;
+    String imageExtension = characterImage.extension;
+
     return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.horizontal(
           left: Radius.circular(30),
         ),
         image: DecorationImage(
-            image: AssetImage('assets/images/download.jpeg'),
+            image: NetworkImage('$imagePath.$imageExtension'),
             fit: BoxFit.cover),
       ),
       width: MediaQuery.of(context).size.width / 2.1,
