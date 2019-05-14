@@ -15,6 +15,7 @@ class CharacterCard extends StatefulWidget {
 class _CharacterCardState extends State<CharacterCard> {
   @override
   Widget build(BuildContext context) {
+    Character _characterDetails = widget.characterDetails;
     return Container(
       height: 200,
       decoration: BoxDecoration(
@@ -41,12 +42,12 @@ class _CharacterCardState extends State<CharacterCard> {
                   //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    Text('Wolverine', style: TextStyle(fontSize: 24),),
+                    Text(_characterDetails.name, style: TextStyle(fontSize: 24),),
                     Text('James Howlett'),
                     Expanded(
-                      child: Text('Is a fictional character appearing in American comic books published by Marvel',
-                      maxLines: 4,
-                      overflow: TextOverflow.ellipsis,),
+                      child: _characterDetails.description != ''
+                          ? Text(_characterDetails.description, maxLines: 4, overflow: TextOverflow.ellipsis,)
+                          : Text('No description available',),
                     ),
                     ListTile(
                       contentPadding: EdgeInsets.symmetric(horizontal: 0),
