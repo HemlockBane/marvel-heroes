@@ -1,6 +1,13 @@
 import 'package:flutter/material.dart';
 
+import '../models/character.dart';
+
 class CharacterCard extends StatefulWidget {
+  CharacterCard({this.characterDetails});
+
+  final Character characterDetails;
+
+
   @override
   _CharacterCardState createState() => _CharacterCardState();
 }
