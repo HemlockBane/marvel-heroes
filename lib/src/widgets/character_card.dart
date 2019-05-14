@@ -1,6 +1,14 @@
 import 'package:flutter/material.dart';
 
+import '../models/character.dart';
+import '../models/character_image.dart';
+
 class CharacterCard extends StatefulWidget {
+  CharacterCard({this.characterDetails});
+
+  final Character characterDetails;
+
+
   @override
   _CharacterCardState createState() => _CharacterCardState();
 }
@@ -8,6 +16,7 @@ class CharacterCard extends StatefulWidget {
 class _CharacterCardState extends State<CharacterCard> {
   @override
   Widget build(BuildContext context) {
+    Character _characterDetails = widget.characterDetails;
     return Container(
       height: 200,
       decoration: BoxDecoration(
@@ -26,7 +35,7 @@ class _CharacterCardState extends State<CharacterCard> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
-            _buildImage(context),
+            _buildImage(context, _characterDetails.image),
             Expanded(
               child: Container(
                 margin: EdgeInsets.symmetric(horizontal: 16),
@@ -34,12 +43,11 @@ class _CharacterCardState extends State<CharacterCard> {
                   //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    Text('Wolverine', style: TextStyle(fontSize: 24),),
-                    Text('James Howlett'),
+                    Text(_characterDetails.name, style: TextStyle(fontSize: 24),),
                     Expanded(
-                      child: Text('Is a fictional character appearing in American comic books published by Marvel',
-                      maxLines: 4,
-                      overflow: TextOverflow.ellipsis,),
+                      child: _characterDetails.description != ''
+                          ? Text(_characterDetails.description, maxLines: 4, overflow: TextOverflow.ellipsis,)
+                          : Text('No description available',),
                     ),
                     ListTile(
                       contentPadding: EdgeInsets.symmetric(horizontal: 0),
@@ -55,14 +63,17 @@ class _CharacterCardState extends State<CharacterCard> {
     );
   }
 
-  Widget _buildImage(BuildContext context) {
+  Widget _buildImage(BuildContext context, CharacterImage characterImage) {
+    String imagePath = characterImage.path;
+    String imageExtension = characterImage.extension;
+
     return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.horizontal(
           left: Radius.circular(30),
         ),
         image: DecorationImage(
-            image: AssetImage('assets/images/download.jpeg'),
+            image: NetworkImage('$imagePath.$imageExtension'),
             fit: BoxFit.cover),
       ),
       width: MediaQuery.of(context).size.width / 2.1,
