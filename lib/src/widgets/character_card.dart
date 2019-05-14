@@ -43,7 +43,6 @@ class _CharacterCardState extends State<CharacterCard> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     Text(_characterDetails.name, style: TextStyle(fontSize: 24),),
-                    Text('James Howlett'),
                     Expanded(
                       child: _characterDetails.description != ''
                           ? Text(_characterDetails.description, maxLines: 4, overflow: TextOverflow.ellipsis,)
