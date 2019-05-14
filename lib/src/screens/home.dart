@@ -55,13 +55,6 @@ class _HomeScreenState extends State<HomeScreen> {
 
                   }
 
-                  if(dataSnapshot.hasData){
-                    dataSnapshot.data.characters.forEach((character){
-                      print(character.name);
-                    });
-                  }
-
-
                   return ListView.builder(
                       itemCount: dataSnapshot.data.characters.length,
                       itemBuilder: (context, index){
