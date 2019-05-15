@@ -91,11 +91,6 @@ Widget _tabBar({BuildContext context}) {
   return Container(
     width: MediaQuery.of(context).size.width,
     child: TabBar(
-        labelColor: MarvelAppTheme.marvelRed,
-        labelStyle: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
-        indicatorColor: MarvelAppTheme.marvelRed,
-        unselectedLabelColor: Colors.grey,
-        indicatorSize: TabBarIndicatorSize.label,
         isScrollable: true,
         tabs: [
           Tab(text: 'Popular',),
