@@ -3,7 +3,7 @@ import 'bubble_tab_indicator.dart';
 
 class MarvelAppTheme {
 
-  double _labelStyle = 17.0;
+  double _labelFontSize = 17.0;
 
 static final Color marvelRed = Color(0xfff30e0d);
 
@@ -14,12 +14,12 @@ static final Color marvelRed = Color(0xfff30e0d);
       primaryColorLight: marvelRed,
       appBarTheme: AppBarTheme(color: Colors.white, elevation: 0.0),
       tabBarTheme: TabBarTheme(
-        labelColor: MarvelAppTheme.marvelRed,
-        labelStyle: TextStyle(fontSize: _labelStyle),
-        unselectedLabelColor: Colors.grey,
-        unselectedLabelStyle: TextStyle(fontSize: _labelStyle),
+        labelColor: Colors.white,
+        labelStyle: TextStyle(fontSize: _labelFontSize),
+        unselectedLabelColor: Colors.black,
+        unselectedLabelStyle: TextStyle(fontSize: _labelFontSize),
         indicator: BubbleTabIndicator(
-            indicatorColor: Colors.black,
+            indicatorColor: marvelRed,
             indicatorHeight: 30,
             indicatorRadius: 10,
             tabBarIndicatorSize: TabBarIndicatorSize.label,

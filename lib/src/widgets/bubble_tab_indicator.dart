@@ -99,7 +99,7 @@ class _BubblePainter extends BoxPainter {
     final Rect indicator = _indicatorRectFor(rect, textDirection);
 
     final Paint paint = Paint();
-    paint.color = Colors.blueAccent;
+    paint.color = indicatorColor;
     paint.style = PaintingStyle.fill;
     canvas.drawRRect(RRect.fromRectAndRadius(indicator, Radius.circular(indicatorRadius)), paint);
   }
