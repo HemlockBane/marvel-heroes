@@ -31,7 +31,15 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        title: Image.asset('assets/images/marvel-logo-second.png',
+          height: 30,),
+        actions: <Widget>[
+          IconButton(
+            iconSize: 30,
+              icon: Icon(Icons.search),
+              onPressed: (){},
+          ),
+        ],
       ),
       body: Container(
         margin: EdgeInsets.only(left: 10, top: 20),
@@ -39,7 +47,6 @@ class _HomeScreenState extends State<HomeScreen> {
             ? FutureBuilder<CharacterDataContainer>(
                 future: _characterDataContainer,
                 builder: (context, dataSnapshot){
-                  //print('snapshot is $dataSnapshot');
 
                   if(dataSnapshot.hasError){
                     print('Error retrieving characters - ${dataSnapshot.error}');
