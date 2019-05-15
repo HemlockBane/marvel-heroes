@@ -33,7 +33,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Image.asset('assets/images/marvel-logo-second.png',
-          height: 30,),
+          height: 22,),
         actions: <Widget>[
           IconButton(
             iconSize: 30,
@@ -44,7 +44,7 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       body: Container(
         color: Colors.white,
-        //margin: EdgeInsets.only(left: 10, top: 20),
+        padding: EdgeInsets.only(left: 10),
         child: DefaultTabController(
             length: 3,
             child: Column(
