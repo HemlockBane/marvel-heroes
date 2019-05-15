@@ -105,4 +105,15 @@ Widget _tabBar({BuildContext context}) {
   );
 }
 
+Widget _tabBarContent({BuildContext context}){
+  return Container(
+    child: TabBarView(
+        children: [
+          Text('Popular'),
+          Text('A-Z'),
+          Text('Last Viewed')
+        ]),
+  );
+}
+
 
