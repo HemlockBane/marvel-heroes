@@ -43,7 +43,8 @@ class _HomeScreenState extends State<HomeScreen> {
         ],
       ),
       body: Container(
-        margin: EdgeInsets.only(left: 10, top: 20),
+        color: Colors.white,
+        //margin: EdgeInsets.only(left: 10, top: 20),
         child: DefaultTabController(
             length: 3,
             child: Column(

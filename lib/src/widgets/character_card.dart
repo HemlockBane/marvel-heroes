@@ -18,6 +18,7 @@ class _CharacterCardState extends State<CharacterCard> {
   Widget build(BuildContext context) {
     Character _characterDetails = widget.characterDetails;
     return Container(
+      margin: EdgeInsets.only(bottom: 10),
       height: 200,
       decoration: BoxDecoration(
         boxShadow: [
@@ -29,7 +30,7 @@ class _CharacterCardState extends State<CharacterCard> {
         ],
       ),
       child: Card(
-        elevation: 16,
+        elevation: 0,
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.horizontal(left: Radius.circular(30))),
         child: Row(

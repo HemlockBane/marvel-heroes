@@ -83,9 +83,6 @@ class _BubblePainter extends BoxPainter {
 
 
 
-
-
-
   @override
   void paint(Canvas canvas, Offset offset, ImageConfiguration configuration) {
     assert(configuration != null);
