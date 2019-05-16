@@ -9,7 +9,7 @@ class BubbleTabIndicator extends Decoration {
     this.indicatorRadius = 100.0,
     this.tabBarIndicatorSize = TabBarIndicatorSize.label,
     this.insets = const EdgeInsets.symmetric(vertical: 2.0, horizontal: 8.0),
-    this.padding = const EdgeInsets.symmetric(horizontal: 5.0),
+    this.padding = const EdgeInsets.symmetric(horizontal: 12.0, vertical: 5.0),
   }) : assert(insets != null) ;
 
   final Color indicatorColor;

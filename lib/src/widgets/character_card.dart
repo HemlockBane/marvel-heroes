@@ -45,7 +45,7 @@ class _CharacterCardState extends State<CharacterCard> {
                   //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    Text(_characterDetails.name, style: TextStyle(fontSize: 24),),
+                    Text(_characterDetails.name, style: Theme.of(context).textTheme.display1.copyWith(fontSize: 22),),
                     Expanded(
                       child: _characterDetails.description != ''
                           ? Text(_characterDetails.description, maxLines: 4, overflow: TextOverflow.ellipsis,)
