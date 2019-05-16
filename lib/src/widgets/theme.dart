@@ -29,12 +29,15 @@ class MarvelAppTheme {
         textTheme: baseTheme.textTheme.copyWith(
           body1: baseTheme.textTheme.body1.copyWith(
               fontFamily: 'SF Pro Text',
+              fontSize: 16,
               fontWeight: FontWeight.w500), //  SF Pro Text Medium
           body2: baseTheme.textTheme.body2.copyWith(
               fontFamily: 'SF Pro Text',
+              fontSize: 16,
               fontWeight: FontWeight.w400), // SF Pro Text Regular
           display1: baseTheme.textTheme.display1.copyWith(
               fontFamily: 'SF Pro Text',
+              fontSize: 22,
               fontWeight: FontWeight.w700), // SF Pro Text Heavy
         ));
   }

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../models/character.dart';
 import '../models/character_image.dart';
+import '../widgets/theme.dart';
 
 class CharacterCard extends StatefulWidget {
   CharacterCard({this.characterDetails});
