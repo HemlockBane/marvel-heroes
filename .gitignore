@@ -27,6 +27,11 @@
 .pub/
 /build/
 
+
+# Keys
+api_keys.json
+api_keys.dart
+
 # Android related
 **/android/**/gradle-wrapper.jar
 **/android/.gradle
