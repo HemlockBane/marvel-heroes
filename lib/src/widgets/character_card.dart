@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import '../models/character.dart';
 import '../models/character_image.dart';
-import '../widgets/theme.dart';
 
 class CharacterCard extends StatefulWidget {
   CharacterCard({this.characterDetails});
@@ -45,7 +44,7 @@ class _CharacterCardState extends State<CharacterCard> {
                   //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    Text(_characterDetails.name, style: Theme.of(context).textTheme.display1.copyWith(fontSize: 22),),
+                    Text(_characterDetails.name, style: Theme.of(context).textTheme.display1.copyWith(fontSize: 20),),
                     Expanded(
                       child: _characterDetails.description != ''
                           ? Text(_characterDetails.description, maxLines: 4, overflow: TextOverflow.ellipsis,)

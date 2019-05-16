@@ -47,6 +47,7 @@ class MarvelAppTheme {
           display1: baseTheme.textTheme.display1.copyWith(
               fontFamily: 'SF Pro Text',
               fontSize: 22,
+              color: Colors.black,
               fontWeight: FontWeight.w700), // SF Pro Text Heavy
         ));
   }
