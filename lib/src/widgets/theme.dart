@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'bubble_tab_indicator.dart';
 
 class MarvelAppTheme {
-  double _labelFontSize = 13.0;
+  double _tabBarLabelFontSize = 15.0;
 
   static final Color marvelRed = Color(0xfff30e0d);
 
@@ -18,11 +18,11 @@ class MarvelAppTheme {
         tabBarTheme: TabBarTheme(
           labelColor: Colors.white,
           labelStyle: TextStyle(
-              fontSize: _labelFontSize,
+              fontSize: _tabBarLabelFontSize,
               fontFamily: 'SF Pro Text',
               fontWeight: FontWeight.w500),
           unselectedLabelColor: Colors.black,
-          unselectedLabelStyle: TextStyle(fontSize: _labelFontSize),
+          unselectedLabelStyle: TextStyle(fontSize: _tabBarLabelFontSize),
           indicator: BubbleTabIndicator(
             indicatorColor: marvelRed,
             indicatorHeight: 28,

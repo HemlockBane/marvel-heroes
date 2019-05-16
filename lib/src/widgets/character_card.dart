@@ -47,13 +47,16 @@ class _CharacterCardState extends State<CharacterCard> {
                     Text(_characterDetails.name, style: Theme.of(context).textTheme.display1.copyWith(fontSize: 20),),
                     Expanded(
                       child: _characterDetails.description != ''
-                          ? Text(_characterDetails.description, maxLines: 4, overflow: TextOverflow.ellipsis,)
-                          : Text('No description available',),
+                          ? Text(_characterDetails.description,
+                              style: _descriptionStyle(),
+                              maxLines: 4,
+                              overflow: TextOverflow.ellipsis,)
+                          : Text('No description available', style: _descriptionStyle(),),
                     ),
                     ListTile(
                       contentPadding: EdgeInsets.symmetric(horizontal: 0),
-                      leading: Text('More info'),
-                      trailing: Icon(Icons.chevron_right),)
+                      leading: Text('More info', style: Theme.of(context).textTheme.body1.copyWith(fontWeight: FontWeight.w700, fontSize: 12),),
+                      trailing: Icon(Icons.chevron_right, color: Colors.black,),)
                   ],
                 ),
               ),
@@ -62,6 +65,10 @@ class _CharacterCardState extends State<CharacterCard> {
         ),
       ),
     );
+  }
+
+  TextStyle _descriptionStyle(){
+    return Theme.of(context).textTheme.body2.copyWith(fontSize: 13);
   }
 
   Widget _buildImage(BuildContext context, CharacterImage characterImage) {
