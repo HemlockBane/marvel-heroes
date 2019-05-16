@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 
+import '../constants/constants.dart';
 import '../data/network.dart';
 import '../models/character_data_container.dart';
 import '../models/character.dart';
@@ -32,7 +33,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Image.asset('assets/images/marvel-logo-second.png',
+        title: Image.asset(marvelImage,
           height: 22,),
         actions: <Widget>[
           IconButton(
