@@ -18,6 +18,7 @@ class _CharacterCardState extends State<CharacterCard> {
   Widget build(BuildContext context) {
     Character _characterDetails = widget.characterDetails;
     return Container(
+      margin: EdgeInsets.only(bottom: 10),
       height: 200,
       decoration: BoxDecoration(
         boxShadow: [
@@ -29,7 +30,7 @@ class _CharacterCardState extends State<CharacterCard> {
         ],
       ),
       child: Card(
-        elevation: 16,
+        elevation: 0,
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.horizontal(left: Radius.circular(30))),
         child: Row(
@@ -43,16 +44,19 @@ class _CharacterCardState extends State<CharacterCard> {
                   //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    Text(_characterDetails.name, style: TextStyle(fontSize: 24),),
+                    Text(_characterDetails.name, style: Theme.of(context).textTheme.display1.copyWith(fontSize: 20),),
                     Expanded(
                       child: _characterDetails.description != ''
-                          ? Text(_characterDetails.description, maxLines: 4, overflow: TextOverflow.ellipsis,)
-                          : Text('No description available',),
+                          ? Text(_characterDetails.description,
+                              style: _descriptionStyle(),
+                              maxLines: 4,
+                              overflow: TextOverflow.ellipsis,)
+                          : Text('No description available', style: _descriptionStyle(),),
                     ),
                     ListTile(
                       contentPadding: EdgeInsets.symmetric(horizontal: 0),
-                      leading: Text('More info'),
-                      trailing: Icon(Icons.chevron_right),)
+                      leading: Text('More info', style: Theme.of(context).textTheme.body1.copyWith(fontWeight: FontWeight.w700, fontSize: 12),),
+                      trailing: Icon(Icons.chevron_right, color: Colors.black,),)
                   ],
                 ),
               ),
@@ -61,6 +65,10 @@ class _CharacterCardState extends State<CharacterCard> {
         ),
       ),
     );
+  }
+
+  TextStyle _descriptionStyle(){
+    return Theme.of(context).textTheme.body2.copyWith(fontSize: 13);
   }
 
   Widget _buildImage(BuildContext context, CharacterImage characterImage) {
