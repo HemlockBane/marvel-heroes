@@ -36,11 +36,10 @@ class _HomeScreenState extends State<HomeScreen> {
         title: Image.asset(marvelImage,
           height: 22,),
         actions: <Widget>[
-          IconButton(
-            iconSize: 30,
-              icon: Icon(Icons.search),
-              onPressed: (){},
-          ),
+          InkWell(
+            onTap: (){},
+              child: Image.asset(AppIcons.search),
+          )
         ],
       ),
       body: Container(
