@@ -57,7 +57,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         builder: (context, dataSnapshot){
 
                           if(dataSnapshot.hasError){
-                            print('Error retrieving characters - ${dataSnapshot.error}');
+                            //print('Error retrieving characters - ${dataSnapshot.error}');
                             return Center(
                               child: Text('Error retrieving characters!'),
                             );

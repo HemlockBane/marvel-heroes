@@ -27,7 +27,7 @@ Future<CharacterDataContainer>getCharacters() async {
   http.Response jsonResponse = await http.get(url);
   String jsonString = jsonResponse.body;
 
-  print('network.dart: ln 29 - This is the JSON response: $jsonString');
+  //print('network.dart: ln 29 - This is the JSON response: $jsonString');
   var contentMap = jsonDecode(jsonString);
 
   CharacterDataWrapper dataWrapper = CharacterDataWrapper.fromJson(contentMap);
