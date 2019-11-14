@@ -76,15 +76,12 @@ class _CharacterCardState extends State<CharacterCard> {
     String imageExtension = characterImage.extension;
 
     return Container(
+      width: MediaQuery.of(context).size.width / 2.1,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.horizontal(
-          left: Radius.circular(30),
-        ),
-        image: DecorationImage(
-            image: NetworkImage('$imagePath.$imageExtension'),
+        borderRadius: BorderRadius.horizontal(left: Radius.circular(30),),
+        image: DecorationImage(image: NetworkImage('$imagePath.$imageExtension'),
             fit: BoxFit.cover),
       ),
-      width: MediaQuery.of(context).size.width / 2.1,
     );
   }
 }
